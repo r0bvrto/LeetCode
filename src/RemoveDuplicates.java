@@ -1,18 +1,18 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RemoveDuplicates {
 	public int removeDuplicates(int[] nums) {
-		for(int i = 0; i < nums.length; i++) {
-			for(int j = 0; j < nums.length; j++) {
-				if(i == j) {
-					nums[j]--;
-				}
-			}
-		}
+		
+        ArrayList<Integer> a = new ArrayList<>(Arrays.asList(nums));
+		Set <Integer> s = new HashSet(a);
+		return s.size();
 	}
 	public static void main(String[] args) {
 		RemoveDuplicates rd = new RemoveDuplicates();
-		int[] nums = {1,1,2};
-		rd.removeDuplicates(nums);
+		int[] nums = {0,0,1,1,1,2,2,3,3,4};
+		System.out.println(rd.removeDuplicates(nums));
 	}
 }
