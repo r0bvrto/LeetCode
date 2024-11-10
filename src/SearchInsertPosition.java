@@ -8,7 +8,6 @@ public class SearchInsertPosition {
             if (nums[i] == target) {
                 encontrado = true;
                 index = i;
-                break;
             }
         }
 		if(!encontrado) {
