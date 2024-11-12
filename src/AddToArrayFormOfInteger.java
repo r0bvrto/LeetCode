@@ -1,3 +1,4 @@
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,11 +8,10 @@ public class AddToArrayFormOfInteger {
 		StringBuilder s = new StringBuilder();
 		for (int i = 0; i < num.length; i++) {
 			s.append(num[i]);
-			System.out.println(s.toString());
 		}
-		int nums = Integer.parseInt(s.toString());
-		int suma = nums + k;
-		String sumaStr = Integer.toString(suma);
+		BigInteger nums = new BigInteger(s.toString());
+		BigInteger suma = nums.add(BigInteger.valueOf(k));
+		String sumaStr = suma.toString();
 		for (int i = 0; i < sumaStr.length(); i++) {
 			a.add(Character.getNumericValue(sumaStr.charAt(i)));
 		}
