@@ -10,11 +10,14 @@ public class AddToArrayFormOfInteger {
 			s.append(num[i]);
 			System.out.println(s.toString());
 		}
+		int nums = Integer.parseInt(s.toString());
+		int suma = nums + k;
+		System.out.println(suma);
 		return a;
 	}
 	public static void main(String[] args) {
 		AddToArrayFormOfInteger ad = new AddToArrayFormOfInteger();
 		int[] num = {1,2,0,0};
-		System.out.println(ad.addToArrayForm(num, 0));
+		System.out.println(ad.addToArrayForm(num, 34));
 	}
 }
