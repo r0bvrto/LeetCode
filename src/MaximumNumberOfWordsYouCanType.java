@@ -1,19 +1,20 @@
 
 public class MaximumNumberOfWordsYouCanType {
 	public int canBeTypedWords(String text, String brokenLetters) {
-		int num = 0;
 		String[] palabras = text.split(" ");
-		for(char letra : brokenLetters.toCharArray()) {
-			for(int i = 0; i < palabras.length; i++) {
-				if(palabras[i].contains(String.valueOf(letra))) {
-					num++;
-				}	
-			}
+		int num = palabras.length;
+		for (String palabra : palabras) {
+		    for (char letra : brokenLetters.toCharArray()) {
+		        if (palabra.contains(String.valueOf(letra))) {
+		            num--;
+		            break;
+		        }
+		    }
 		}
 		return num;
 	}
 	public static void main(String[] args) {
 		MaximumNumberOfWordsYouCanType m = new MaximumNumberOfWordsYouCanType();
-		System.out.println(m.canBeTypedWords("hello world", "ad"));
+		System.out.println(m.canBeTypedWords("leet code", "lt"));
 	}
 }
