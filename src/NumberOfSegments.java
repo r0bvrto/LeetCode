@@ -1,13 +1,14 @@
 
 public class NumberOfSegments {
 	public int countSegments(String s) {
-		if(s.isEmpty()) {
-			return 0;
-		}else {
-			String[] palabras = s.trim().split(" ");
-			return palabras.length;
+		String[] palabras = s.split(" ");
+		int num = 0;
+		for (String palabra : palabras) {
+			if (!palabra.isEmpty()) {
+				num++;
+			}
 		}
-		
+		return num;
 	}
 
 	public static void main(String[] args) {
