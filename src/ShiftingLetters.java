@@ -3,12 +3,12 @@ public class ShiftingLetters {
 	public String shiftingLetters(String s, int[] shifts) {
 		char[] letra = s.toCharArray();
 		for(int i = 0; i < letra.length; i++) {
-			for(int j = 0; j < shifts.length; j++) {
+			for(int j = i; j < shifts.length; j++) {
 				letra[i] += shifts[j];
-				System.out.println(letra);
 			}
 		}
-		return "";
+		String palabra = new String(letra);
+		return palabra;
 	}
 
 	public static void main(String[] args) {
