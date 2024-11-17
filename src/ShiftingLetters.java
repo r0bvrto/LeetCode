@@ -2,9 +2,12 @@
 public class ShiftingLetters {
 	public String shiftingLetters(String s, int[] shifts) {
 		char[] letra = s.toCharArray();
-		for(int i = 0; i < letra.length; i++) {
-			for(int j = i; j < shifts.length; j++) {
+		for (int i = 0; i < letra.length; i++) {
+			for (int j = i; j < shifts.length; j++) {
 				letra[i] += shifts[j];
+				if (letra[i] > 'z') {
+					letra[i] = (char) ('a' + (letra[i] - 'z' - 1));
+				}
 			}
 		}
 		String palabra = new String(letra);
@@ -13,10 +16,8 @@ public class ShiftingLetters {
 
 	public static void main(String[] args) {
 		ShiftingLetters sl = new ShiftingLetters();
-		int[] shifts = {3,5,9};
-		System.out.println(sl.shiftingLetters("abc", shifts));
-		char letra = 'a';
-		letra = 'a' + 3;
-		System.out.println(letra);
+		int[] shifts = {52};
+		System.out.println(sl.shiftingLetters("z", shifts));
+
 	}
 }
