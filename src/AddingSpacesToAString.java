@@ -2,21 +2,10 @@ import java.util.Arrays;
 
 public class AddingSpacesToAString {
 	public String addSpaces(String s, int[] spaces) {
-		StringBuilder sb = new StringBuilder();
-		for (int space : spaces) {
-            if (space == 0) {
-                sb.append(" ");
-                break;
-            }
-        }
-		for (int i = 0; i < s.length(); i++) {
-			sb.append(s.charAt(i));
-			for (int space : spaces) {
-				if (i + 1 == space) {
-					sb.append(" ");
-					break;
-				}
-			}
+		StringBuilder sb = new StringBuilder(s);
+		int n = spaces.length;
+		for (int i = 0; i < n; i++) {
+			sb.insert(spaces[i] + i, " ");
 		}
 		return sb.toString();
 	}
