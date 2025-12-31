@@ -2,14 +2,13 @@
 public class ShiftingLetters {
 	public String shiftingLetters(String s, int[] shifts) {
 		char[] letra = s.toCharArray();
-		for (int i = 0; i < letra.length; i++) {
+		int sum = 0;
+
+		for (int i = letra.length - 1; i >= 0; i--) {
 			int shift = shifts[i % shifts.length] % 26;
 
-			letra[i] += shift;
-
-			if (letra[i] > 'z') {
-				letra[i] = (char) ('a' + (letra[i] - 'z' - 1));
-			}
+			sum = (sum + shifts[i]) % 26;
+			letra[i] = (char) ('a' + ((sum + letra[i] - 'a') % 26));
 		}
 		return new String(letra);
 	}
