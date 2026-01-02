@@ -5,8 +5,7 @@ public class Palindrome {
     	}
     	String numToStr = Integer.toString(x);
     	String numReves = new StringBuilder(numToStr).reverse().toString();
-    	int numInvert = Integer.parseInt(numReves);
-    	return x == numInvert;
+    	return numToStr.equals(numReves);
     }
 
     public static void main(String[] args) {
